@@ -25,12 +25,12 @@ docker pull tensorflow/serving:2.6.0
 
 Run the container using BERT exported model:
 ```
-docker run --rm -d -p 8501:8501 -v $(pwd)/mybert:/models/mybert -e MODEL_NAME=mybert -t tensorflow/serving:2.6.0
+docker run --rm -it -p 8501:8501 -v $(pwd)/mybert:/models/mybert -e MODEL_NAME=mybert -t tensorflow/serving:2.6.0
 ```
 
 Run the container as daemon using BERT exported model:
 ```
-docker run --rm -it -p 8501:8501 -v $(pwd)/mybert:/models/mybert -e MODEL_NAME=mybert -t tensorflow/serving:2.6.0
+docker run --rm -d -p 8501:8501 -v $(pwd)/mybert:/models/mybert -e MODEL_NAME=mybert -t tensorflow/serving:2.6.0
 ```
 
 Once the container is up you could test it with test.py
